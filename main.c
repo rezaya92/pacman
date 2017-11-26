@@ -20,6 +20,10 @@ struct bots {
     int aggression;
     int defense_time;
 } bot[4];
+/* bot[0] = blinky
+ * bot[1] = pinky
+ * bot[2] = clyde
+ * bot[3] = inky*/
 
 
 int row,column,minutes_elapsed,seconds_elapsed,map[100][100];
@@ -54,6 +58,7 @@ void scan(){
 
 
 void evaluate( int destin_y, int destin_x){
+    int eaten = 0,i;
     switch (map[destin_y][destin_x]){
         case '#':
             return;
@@ -61,6 +66,7 @@ void evaluate( int destin_y, int destin_x){
             pacman.x = destin_x;
             pacman.y = destin_y;
             pacman.points += 1;
+            map[destin_y][destin_x] = '_';
             break;
         case '_':
             pacman.x = destin_x;
@@ -70,22 +76,47 @@ void evaluate( int destin_y, int destin_x){
             pacman.x = destin_x;
             pacman.y = destin_y;
             pacman.points += 20;
+            map[destin_y][destin_x] = '_';
             break;
         case 'O':
             pacman.x = destin_x;
             pacman.y = destin_y;
+            map[destin_y][destin_x] = '_';
             pineapple();
             break;
     }
-    for (int i = 0; i < 4 ; ++i) {
-        if (pacman.x == bot[i].x && pacman.y == bot[i].y) bot_collision(i);
+    for (i = 0; i < 4 ; ++i) {
+        if (pacman.x == bot[i].x && pacman.y == bot[i].y && bot[i].aggression == 0) bot_collision(i);
+    }
+    for (int i = 0; i < 4; ++i) {
+        if (pacman.x == bot[i].x && pacman.y == bot[i].y && eaten == 0 && bot[i].aggression == 1) {
+            bot_collision(i);
+            eaten = 1;
+        }
     }
     return;
 }
 
 
-void bot_collision(int bot){
+void bot_collision(int i){
 
+    if ( bot[i].aggression == 1){
+        pacman.health -= 1;
+        if (pacman.health > 0) {
+            pacman.x = pacman.initial_x;
+            pacman.y = pacman.initial_y;
+            evaluate(pacman.y,pacman.x);
+        }
+        else lose();
+    }
+    else {
+        pacman.points += 50;
+    }
+    return;
+}
+
+void lose(){
+    return;
 }
 
 void move(){
@@ -112,6 +143,26 @@ void move(){
 }
 
 
+int win(){
+    int i,j,sum = 0;
+    for ( i = 0; i < row; ++i) {
+        for ( j = 0; j < column; ++j) {
+            switch (map[i][j]){
+                case '*':
+                    sum += 1;
+                    break;
+                case 'O':
+                    sum += 1;
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+    return sum;
+}
+
+
 void time(){
     int i;
     seconds_elapsed += 1;
@@ -126,6 +177,7 @@ void time(){
             }
         }
     }
+    return;
 }
 
 void pineapple(){
@@ -143,7 +195,10 @@ int main() {
     initiate();
     scan();
     move();
-    printf ("(%d,%d)", pacman.y,pacman.x);
-    printf("%c",map[4][8]);
+    printf ("(%d,%d)\n", pacman.y,pacman.x);
+    printf("%d\n",pacman.points);
+    if (win() == 0) printf("Yes");
+    else printf("No");
+
     return 0;
 }
