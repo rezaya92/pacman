@@ -27,8 +27,22 @@ map.h
 /home/reza/CLionProjects/PACMAN/src/map.h
 
 /home/reza/CLionProjects/PACMAN/src/physics.c
+stdlib.h
+-
+time.h
+-
 physics.h
 /home/reza/CLionProjects/PACMAN/src/physics.h
+stdio.h
+-
+math.h
+-
+unistd.h
+-
+game.h
+/home/reza/CLionProjects/PACMAN/src/game.h
+map.h
+/home/reza/CLionProjects/PACMAN/src/map.h
 
 /home/reza/CLionProjects/PACMAN/src/physics.h
 game.h

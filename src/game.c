@@ -9,7 +9,7 @@ void initiateGame(char* filename, Map* outMap, Game* outGame, Pacman* outPacman,
     outGame->cheeses = 0;
     outGame->cherries = 0;
     outGame->cheeses = 0;
-    outPacman->speed= 0;
+    outPacman->speed= PACMAN_DEFAULT_SPEED;
     outGame->ghosts = 4;
     initiate = fopen(filename,"r");
     fscanf(initiate,"%d %d", &outMap->height, &outMap->width );
@@ -35,7 +35,7 @@ void initiateGame(char* filename, Map* outMap, Game* outGame, Pacman* outPacman,
     fscanf(initiate,"%d", &outGame->score);
     fscanf(initiate,"%*s %d %d (%d,%d) (%lf,%lf)" ,&outPacman->dir, &outPacman->health, &outPacman->startY, &outPacman->startX, &outPacman->y, &outPacman->x);
     for (i = 0; i < 4; ++i) {
-        outGhosts[i].speed = 0;
+        outGhosts[i].speed = GHOST_DEFAULT_SPEED;
         fscanf(initiate,"%*s %d %d", &outGhosts[i].dir, &outGhosts[i].blue);
         outGhosts[i].blue = 1 - outGhosts[i].blue;
         outGhosts[i].blueCounterDown=0;
