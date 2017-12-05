@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/reza/CLionProjects/PACMAN/src/game.c
+stdio.h
+-
+game.h
+/home/reza/CLionProjects/PACMAN/src/game.h
+map.h
+/home/reza/CLionProjects/PACMAN/src/map.h
+physics.h
+/home/reza/CLionProjects/PACMAN/src/physics.h
+
+/home/reza/CLionProjects/PACMAN/src/game.h
+stdbool.h
+-
+map.h
+/home/reza/CLionProjects/PACMAN/src/map.h
+
+/home/reza/CLionProjects/PACMAN/src/input.h
+
+/home/reza/CLionProjects/PACMAN/src/map.h
+
+/home/reza/CLionProjects/PACMAN/src/physics.c
+physics.h
+/home/reza/CLionProjects/PACMAN/src/physics.h
+
+/home/reza/CLionProjects/PACMAN/src/physics.h
+game.h
+/home/reza/CLionProjects/PACMAN/src/game.h
+input.h
+/home/reza/CLionProjects/PACMAN/src/input.h
+

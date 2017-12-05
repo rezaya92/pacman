@@ -1,5 +1,10 @@
+
+//test needed
+
 #include <stdio.h>
 #include <string.h>
+
+
 struct player {
     int initial_x;
     int initial_y;
@@ -27,6 +32,18 @@ struct bots {
 
 
 int row,column,minutes_elapsed,seconds_elapsed,map[100][100];
+
+
+int main() {
+    initiate();
+    scan();
+    move();
+    printf ("(%d,%d)\n", pacman.y,pacman.x);
+    printf("%d\n",pacman.points);
+    if (win() == 0) printf("Yes");
+    else printf("No");
+    return 0;
+}
 
 void initiate(){
     int i;
@@ -88,7 +105,7 @@ void evaluate( int destin_y, int destin_x){
     for (i = 0; i < 4 ; ++i) {
         if (pacman.x == bot[i].x && pacman.y == bot[i].y && bot[i].aggression == 0) bot_collision(i);
     }
-    for (int i = 0; i < 4; ++i) {
+    for (i = 0; i < 4; ++i) {
         if (pacman.x == bot[i].x && pacman.y == bot[i].y && eaten == 0 && bot[i].aggression == 1) {
             bot_collision(i);
             eaten = 1;
@@ -97,27 +114,6 @@ void evaluate( int destin_y, int destin_x){
     return;
 }
 
-
-void bot_collision(int i){
-
-    if ( bot[i].aggression == 1){
-        pacman.health -= 1;
-        if (pacman.health > 0) {
-            pacman.x = pacman.initial_x;
-            pacman.y = pacman.initial_y;
-            evaluate(pacman.y,pacman.x);
-        }
-        else lose();
-    }
-    else {
-        pacman.points += 50;
-    }
-    return;
-}
-
-void lose(){
-    return;
-}
 
 void move(){
     int destin_y = pacman.y, destin_x =pacman.x;
@@ -143,24 +139,25 @@ void move(){
 }
 
 
-int win(){
-    int i,j,sum = 0;
-    for ( i = 0; i < row; ++i) {
-        for ( j = 0; j < column; ++j) {
-            switch (map[i][j]){
-                case '*':
-                    sum += 1;
-                    break;
-                case 'O':
-                    sum += 1;
-                    break;
-                default:
-                    break;
-            }
+void bot_collision(int i){
+
+    if ( bot[i].aggression == 1){
+        pacman.health -= 1;
+        if (pacman.health > 0) {
+            pacman.x = pacman.initial_x;
+            pacman.y = pacman.initial_y;
+            evaluate(pacman.y,pacman.x);
         }
+        else lose();
     }
-    return sum;
+    else {
+        pacman.points += 50;
+    }
+    return;
 }
+
+
+
 
 
 void time(){
@@ -190,15 +187,32 @@ void pineapple(){
 }
 
 
-
-int main() {
-    initiate();
-    scan();
-    move();
-    printf ("(%d,%d)\n", pacman.y,pacman.x);
-    printf("%d\n",pacman.points);
-    if (win() == 0) printf("Yes");
-    else printf("No");
-
-    return 0;
+void lose(){
+    return;
 }
+
+
+
+
+int win(){
+    int i,j,sum = 0;
+    for ( i = 0; i < row; ++i) {
+        for ( j = 0; j < column; ++j) {
+            switch (map[i][j]){
+                case '*':
+                    sum += 1;
+                    break;
+                case 'O':
+                    sum += 1;
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+    return sum;
+}
+
+
+
+

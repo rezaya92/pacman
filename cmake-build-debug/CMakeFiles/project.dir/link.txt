@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/project.dir/src/physics.c.o CMakeFiles/project.dir/src/game.c.o  -o project ../liblib.a -lm -lSDL2 -lSDL2_gfx 

@@ -1,0 +1,3 @@
+/home/reza/CLionProjects/PACMAN/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/reza/CLionProjects/PACMAN/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/reza/CLionProjects/PACMAN/cmake-build-debug/CMakeFiles/PACMAN.dir
