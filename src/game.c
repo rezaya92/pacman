@@ -3,7 +3,6 @@
 #include "map.h"
 #include "physics.h"
 #include <math.h>
-#include <time.h>
 void initiateGame(char* filename, Map* outMap, Game* outGame, Pacman* outPacman, Ghost* outGhosts) {
     int i,j;
     FILE *data;
@@ -102,7 +101,8 @@ void checkEatables(Map* map, Game* outGame, Pacman* outPacman, Ghost* outGhosts)
 }
 
 void checkGhostCollision(Pacman* outPacman, Ghost* outGhost) {
-    if ( sqrt ( pow (outGhost->y - outPacman->y , 2 ) + pow ( outGhost->x - outPacman->x , 2 ) ) < 0.5){
+    double distance = sqrt ( pow (outGhost->y - outPacman->y , 2 ) + pow ( outGhost->x - outPacman->x , 2 ) );
+    if ( distance < 0.5){
         if (outGhost->blue == 1){
             outGhost->blue = 0;
             outGhost->blueCounterDown = 0;
@@ -118,7 +118,7 @@ void checkGhostCollision(Pacman* outPacman, Ghost* outGhost) {
 }
 
 bool isGameFinished(Game* game, Pacman* pacman) {
-    if (pacman->health == 0 || (game->cheeses == 0 && game->pineapples == 0))return true;
+    if (pacman->health <= 0 || (game->cheeses == 0 && game->pineapples == 0))return true;
     else return false;
 }
 
