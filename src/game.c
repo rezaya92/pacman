@@ -26,7 +26,7 @@ void initiateGame(char* filename, Map* outMap, Game* outGame, Pacman* outPacman,
                     outGame->pineapples++;
                     break;
                 case '^':
-                    outGame->cheeses++;
+                    outGame->cherries++;
                     break;
             }
         }
@@ -76,19 +76,22 @@ void checkEatables(Map* map, Game* outGame, Pacman* outPacman, Ghost* outGhosts)
             distance = outPacman->x - destin_x;
             break;
     }
-    if (distance < 0.5){
+    if (distance < 0.7){
         switch (map->cells[destin_x][destin_y]){
             case CELL_CHEESE:
                 outGame->score += CHEESE_SCORE;
+                outGame->cheeses -= 1;
                 map->cells[destin_x][destin_y] = CELL_EMPTY;
                 break;
             case CELL_CHERRY:
                 outGame->score += CHERRY_SCORE;
+                outGame->cherries -= 1;
                 map->cells[destin_x][destin_y] = CELL_EMPTY;
                 break;
             case CELL_PINEAPPLE:
-                map->cells[destin_x][destin_y] = CELL_EMPTY;
                 outGame->score += PINEAPPLE_SCORE;
+                outGame->pineapples -= 1;
+                map->cells[destin_x][destin_y] = CELL_EMPTY;
                 for ( i = 0; i < 4 ; ++i) {
                     outGhosts[i].blue = 1;
                     outGhosts[i].blueCounterDown = BLUE_DURATION;
@@ -99,15 +102,29 @@ void checkEatables(Map* map, Game* outGame, Pacman* outPacman, Ghost* outGhosts)
 }
 
 void checkGhostCollision(Pacman* outPacman, Ghost* outGhost) {
-    // fill me
+    if ( sqrt ( pow (outGhost->y - outPacman->y , 2 ) + pow ( outGhost->x - outPacman->x , 2 ) ) < 0.5){
+        if (outGhost->blue == 1){
+            outGhost->blue = 0;
+            outGhost->blueCounterDown = 0;
+            outGhost->x = outGhost->startX;
+            outGhost->y = outGhost->startY;
+        }
+        else{
+            outPacman->x = outPacman->startX;
+            outPacman->y = outPacman->startY;
+            outPacman->health -= 1;
+        }
+    }
 }
 
 bool isGameFinished(Game* game, Pacman* pacman) {
-    // fill me
+    if (pacman->health == 0 || (game->cheeses == 0 && game->pineapples == 0))return true;
+    else return false;
 }
 
 void checkGhostState(Ghost* ghost) {
-    // fill me
-
-
+    if (ghost->blue == 1){
+        ghost->blueCounterDown -= 1;
+        if (ghost->blueCounterDown == 0) ghost->blue = 0;
+    }
 }

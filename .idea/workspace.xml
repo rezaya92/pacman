@@ -12,11 +12,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c67b05fc-4f89-4905-848f-a80659e48ce5" name="Default" comment="Phase0">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PACMAN.dir/src/game.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PACMAN.dir/src/physics.c.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PACMAN.dir/src/physics.c.o" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/PACMAN" afterPath="$PROJECT_DIR$/cmake-build-debug/PACMAN" />
-      <change beforePath="$PROJECT_DIR$/main.c" afterPath="$PROJECT_DIR$/phase0.c" />
       <change beforePath="$PROJECT_DIR$/src/game.c" afterPath="$PROJECT_DIR$/src/game.c" />
       <change beforePath="$PROJECT_DIR$/src/physics.c" afterPath="$PROJECT_DIR$/src/physics.c" />
     </list>
@@ -56,8 +52,8 @@
       <file leaf-file-name="game.c" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/game.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="449">
-              <caret line="101" column="14" lean-forward="true" selection-start-line="101" selection-start-column="14" selection-end-line="101" selection-end-column="14" />
+            <state relative-caret-position="704">
+              <caret line="125" column="22" lean-forward="false" selection-start-line="125" selection-start-column="22" selection-end-line="125" selection-end-column="22" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -68,8 +64,8 @@
       <file leaf-file-name="physics.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/physics.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="776">
-              <caret line="85" column="8" lean-forward="true" selection-start-line="85" selection-start-column="8" selection-end-line="85" selection-end-column="8" />
+            <state relative-caret-position="413">
+              <caret line="64" column="59" lean-forward="false" selection-start-line="64" selection-start-column="59" selection-end-line="64" selection-end-column="59" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -201,12 +197,12 @@
       <workItem from="1512466751939" duration="5215000" />
       <workItem from="1512477105665" duration="1400000" />
       <workItem from="1512493645798" duration="14317000" />
-      <workItem from="1512913233299" duration="12914000" />
+      <workItem from="1512913233299" duration="17871000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="93966000" />
+    <option name="totallyTimeSpent" value="98923000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="461" y="102" width="1920" height="1053" extended-state="6" />
@@ -557,8 +553,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/physics.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="776">
-          <caret line="85" column="8" lean-forward="true" selection-start-line="85" selection-start-column="8" selection-end-line="85" selection-end-column="8" />
+        <state relative-caret-position="413">
+          <caret line="64" column="59" lean-forward="false" selection-start-line="64" selection-start-column="59" selection-end-line="64" selection-end-column="59" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
@@ -567,8 +563,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/game.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
-          <caret line="101" column="14" lean-forward="true" selection-start-line="101" selection-start-column="14" selection-end-line="101" selection-end-column="14" />
+        <state relative-caret-position="704">
+          <caret line="125" column="22" lean-forward="false" selection-start-line="125" selection-start-column="22" selection-end-line="125" selection-end-column="22" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>

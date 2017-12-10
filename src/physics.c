@@ -62,7 +62,9 @@ Direction decidePacman(const Map* map, Pacman* pacman, Action action) {
         }
         destin_x = destin_x < 0 ? destin_x % map->width + map->width : destin_x % map->width;
         destin_y = destin_y < 0 ? destin_y % map->height + map->height : destin_y % map->height;
-        if (map->cells[destin_x][destin_y] != CELL_BLOCK) return dir;
+        if (map->cells[destin_x][destin_y] != CELL_BLOCK) {
+            return dir;
+        }
     }
     destin_y = pacman->y;
     destin_x = pacman->x;
