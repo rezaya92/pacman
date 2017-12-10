@@ -41,7 +41,6 @@ Direction decideGhost(const Map* map, Ghost* ghost) {
 Direction decidePacman(const Map* map, Pacman* pacman, Action action) {
     int dir = pacman->dir;
     int destin_y = pacman->y, destin_x =pacman->x;
-    printf("\n%d %d\n",action,MOVE_ACTION_MASK);
     if (action & MOVE_ACTION_MASK) {
         switch (action) {
             case ACTION_UP:
@@ -65,7 +64,6 @@ Direction decidePacman(const Map* map, Pacman* pacman, Action action) {
         destin_y = destin_y < 0 ? destin_y % map->height + map->height : destin_y % map->height;
         if (map->cells[destin_x][destin_y] != CELL_BLOCK) return dir;
     }
-
     destin_y = pacman->y;
     destin_x = pacman->x;
     switch (pacman->dir){

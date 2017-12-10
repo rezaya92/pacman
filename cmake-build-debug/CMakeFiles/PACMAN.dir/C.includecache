@@ -15,6 +15,10 @@ map.h
 /home/reza/CLionProjects/PACMAN/src/map.h
 physics.h
 /home/reza/CLionProjects/PACMAN/src/physics.h
+math.h
+-
+time.h
+-
 
 /home/reza/CLionProjects/PACMAN/src/game.h
 stdbool.h
