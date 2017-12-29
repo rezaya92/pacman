@@ -76,6 +76,8 @@ void checkEatables(Map* map, Game* outGame, Pacman* outPacman, Ghost* outGhosts)
             break;
     }
     if (distance < 0.7){
+        Standardize(destin_x,map->width);
+        Standardize(destin_y,map->height);
         switch (map->cells[destin_x][destin_y]){
             case CELL_CHEESE:
                 outGame->score += CHEESE_SCORE;

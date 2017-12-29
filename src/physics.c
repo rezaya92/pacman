@@ -7,7 +7,9 @@
 #include "game.h"
 #include "map.h"
 
-Direction decideGhost(const Map* map, Ghost* ghost) {
+
+
+Direction decideGhost(const Map* map, Ghost *ghost, Pacman *pacman, Ghost *blinky) {
     int dir;
     int destin_x,destin_y;
     int flag = 0;
@@ -30,8 +32,8 @@ Direction decideGhost(const Map* map, Ghost* ghost) {
                 destin_x = (int)ghost->x - 1;
                 break;
         }
-        destin_x = destin_x < 0 ? destin_x % map->width + map->width : destin_x % map->width;
-        destin_y = destin_y < 0 ? destin_y % map->height + map->height : destin_y % map->height;
+        Standardize(destin_x,map->width);
+        Standardize(destin_y,map->height);
         if (map->cells[destin_x][destin_y] != CELL_BLOCK) flag = 1;
     }
     dir = dir == 0 ? -1 : dir;
@@ -60,8 +62,8 @@ Direction decidePacman(const Map* map, Pacman* pacman, Action action) {
                 dir = 4;
                 break;
         }
-        destin_x = destin_x < 0 ? destin_x % map->width + map->width : destin_x % map->width;
-        destin_y = destin_y < 0 ? destin_y % map->height + map->height : destin_y % map->height;
+        Standardize(destin_x,map->width);
+        Standardize(destin_y,map->height);
         if (map->cells[destin_x][destin_y] != CELL_BLOCK) {
             return dir;
         }
@@ -82,8 +84,8 @@ Direction decidePacman(const Map* map, Pacman* pacman, Action action) {
             destin_x = (int)pacman->x - 1;
             break;
     }
-    destin_x = destin_x < 0 ? destin_x % map->width + map->width : destin_x % map->width;
-    destin_y = destin_y < 0 ? destin_y % map->height + map->height : destin_y % map->height;
+    Standardize(destin_x,map->width);
+    Standardize(destin_y,map->height);
     if (map->cells[destin_x][destin_y] != CELL_BLOCK) return pacman->dir;
     else return -1;
 }
