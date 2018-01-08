@@ -13,11 +13,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c67b05fc-4f89-4905-848f-a80659e48ce5" name="Default" comment="Phase0">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PACMAN.dir/C.includecache" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PACMAN.dir/C.includecache" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PACMAN.dir/src/game.c.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PACMAN.dir/src/game.c.o" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PACMAN.dir/src/physics.c.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PACMAN.dir/src/physics.c.o" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/PACMAN" afterPath="$PROJECT_DIR$/cmake-build-debug/PACMAN" />
-      <change beforePath="$PROJECT_DIR$/src/game.c" afterPath="$PROJECT_DIR$/src/game.c" />
       <change beforePath="$PROJECT_DIR$/src/physics.c" afterPath="$PROJECT_DIR$/src/physics.c" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -56,8 +51,8 @@
       <file leaf-file-name="game.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/game.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="557">
-              <caret line="111" column="1" lean-forward="true" selection-start-line="111" selection-start-column="1" selection-end-line="111" selection-end-column="1" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -68,8 +63,8 @@
       <file leaf-file-name="physics.c" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/physics.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
-              <caret line="62" column="8" lean-forward="true" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="8" />
+            <state relative-caret-position="521">
+              <caret line="59" column="6" lean-forward="false" selection-start-line="59" selection-start-column="6" selection-end-line="59" selection-end-column="6" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -108,8 +103,8 @@
       <list>
         <option value="$PROJECT_DIR$/main.c" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/src/physics.c" />
         <option value="$PROJECT_DIR$/src/game.c" />
+        <option value="$PROJECT_DIR$/src/physics.c" />
       </list>
     </option>
   </component>
@@ -198,12 +193,12 @@
       <workItem from="1514530009195" duration="383000" />
       <workItem from="1514530428878" duration="11596000" />
       <workItem from="1514901660855" duration="634000" />
-      <workItem from="1515404164884" duration="8334000" />
+      <workItem from="1515404164884" duration="23680000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="120922000" />
+    <option name="totallyTimeSpent" value="136268000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="143" y="59" width="1920" height="1053" extended-state="6" />
@@ -734,8 +729,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/game.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="557">
-          <caret line="111" column="1" lean-forward="true" selection-start-line="111" selection-start-column="1" selection-end-line="111" selection-end-column="1" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
@@ -744,8 +739,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/physics.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="62" column="8" lean-forward="true" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="8" />
+        <state relative-caret-position="521">
+          <caret line="59" column="6" lean-forward="false" selection-start-line="59" selection-start-column="6" selection-end-line="59" selection-end-column="6" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>

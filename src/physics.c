@@ -8,22 +8,44 @@
 #include "map.h"
 
 Direction NearestPath(Map *map, int origin_x, int origin_y, int destin_x, int destin_y){
-    if (origin_x == destin_x && origin_y == destin_y)   return rand();
+    int choices[4] = {0,0,0,0};
+    if (origin_x == destin_x && origin_y == destin_y)   return rand()%4 + 1;
     else {
+        int i;
         int front = 0;
         int rear = 0;
-        int level = 1;
-        int queue[10000][3];
-        queue[rear][0] = origin_x; // first parameter is x of the block.
-        queue[rear][1] = origin_y; // second parameter is y of the block.
-        queue[rear++][2] = 0; //third parameter is the initial direction which got us here;
+        int distance = 1;
+        int queue[10000][4];
+        for ( i = 1; i <= 4; ++i,rear++) {
+            queue[rear][0] = origin_x - ((i - 3) % 2); // first parameter is x of the block.
+            queue[rear][1] = origin_y + ((i - 2) % 2); // second parameter is y of the block.
+            queue[rear][2] = i; //third parameter is the initial direction which got us here.
+            queue[rear][3] = distance; //fourth parameter is distance
+            Standardize(queue[rear][0],map->width);
+            Standardize(queue[rear][1],map->height);
+        }
         while( rear > front ){
-
+            if (queue[front][0] == destin_x && queue[front][1] == destin_y) return queue[front][2];
+            else if (map->cells[queue[front][0]][queue[front][1]] != CELL_BLOCK) {
+                //printf("\n%d %d\n",queue[front][0],queue[front][1]);
+                //sleep(1);
+                for ( i = 1, distance++; i <= 4; ++i,rear++) {
+                    queue[rear][0] = queue[front][0] - ((i - 3) % 2);
+                    queue[rear][1] = queue[front][1] + ((i - 2) % 2);
+                    queue[rear][2] = queue[front][2];
+                    queue[rear][3] = queue[front][3] + 1;
+                    Standardize(queue[rear][0],map->width);
+                    Standardize(queue[rear][1],map->height);
+                }
+            }
+            front++;
         }
     }
 }
 
 Direction decideGhost(const Map* map, Ghost *ghost, Pacman *pacman, Ghost *blinky) {
+    /*printf("\n%d\n",NearestPath(map,1,0,4,3));
+    sleep(1);
     int dir;
     int destin_x,destin_y;
     int flag = 0;
@@ -34,8 +56,10 @@ Direction decideGhost(const Map* map, Ghost *ghost, Pacman *pacman, Ghost *blink
         Standardize(destin_x,map->width);
         Standardize(destin_y,map->height);
         if (map->cells[destin_x][destin_y] != CELL_BLOCK) flag = 1;
-    }
-    return dir;
+    }*/
+    //printf("\n%d\n",NearestPath(map,ghost->x,ghost->y,pacman->x,pacman->y));
+    //sleep(1);
+    return NearestPath(map,ghost->x,ghost->y,pacman->x,pacman->y);
 }
 
 Direction decidePacman(const Map* map, Pacman* pacman, Action action) {
