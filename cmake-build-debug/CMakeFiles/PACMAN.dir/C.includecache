@@ -17,6 +17,10 @@ physics.h
 /home/reza/CLionProjects/PACMAN/src/physics.h
 math.h
 -
+stdlib.h
+-
+time.h
+-
 
 /home/reza/CLionProjects/PACMAN/src/game.h
 stdbool.h

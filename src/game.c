@@ -3,13 +3,16 @@
 #include "map.h"
 #include "physics.h"
 #include <math.h>
+#include <stdlib.h>
+#include <time.h>
+
 void initiateGame(char* filename, Map* outMap, Game* outGame, Pacman* outPacman, Ghost* outGhosts) {
     int i,j;
     FILE *data;
     outGame->cheeses = 0;
     outGame->cherries = 0;
     outGame->cheeses = 0;
-    outPacman->speed= PACMAN_DEFAULT_SPEED;
+    outPacman->speed = PACMAN_DEFAULT_SPEED;
     outGame->ghosts = 4;
     data = fopen(filename,"r");
     fscanf(data,"%d %d", &outMap->height, &outMap->width );
@@ -43,39 +46,16 @@ void initiateGame(char* filename, Map* outMap, Game* outGame, Pacman* outPacman,
         fscanf(data,"(%d,%d) (%lf,%lf)", &outGhosts[i].startY, &outGhosts[i].startX, &outGhosts[i].y, &outGhosts[i].x);
         outGhosts[i].type = i;
     }
+    srand(time(NULL));
 }
 
 void checkEatables(Map* map, Game* outGame, Pacman* outPacman, Ghost* outGhosts) {
     double distance;
     int destin_x,destin_y,i;
-    switch (outPacman->dir){
-        case -1:
-            destin_x = (int)outPacman->x;
-            destin_y = (int)outPacman->y;
-            distance = 0;
-            break;
-        case 1:
-            destin_x = (int)outPacman->x;
-            destin_y = (int)outPacman->y;
-            distance = outPacman->y - destin_y;
-            break;
-        case 2:
-            destin_x = (int)outPacman->x + 1;
-            destin_y = (int)outPacman->y;
-            distance = destin_x - outPacman->x;
-            break;
-        case 3:
-            destin_x = (int)outPacman->x;
-            destin_y = (int)outPacman->y + 1;
-            distance = destin_y - outPacman->y;
-            break;
-        case 4:
-            destin_x = (int)outPacman->x;
-            destin_y = (int)outPacman->y;
-            distance = outPacman->x - destin_x;
-            break;
-    }
-    if (distance < 0.7){
+    destin_x = (int)outPacman->x + (outPacman->dir == 2);
+    destin_y = (int)outPacman->y + (outPacman->dir == 3);
+    distance = fabs(destin_x + destin_y - outPacman->x - outPacman->y);
+    if (distance < 0.624){
         Standardize(destin_x,map->width);
         Standardize(destin_y,map->height);
         switch (map->cells[destin_x][destin_y]){
