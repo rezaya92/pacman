@@ -7,9 +7,27 @@
 #include "game.h"
 #include "map.h"
 
+int valid_direction(int x,int y, int dir, Map *map){
+    x = x - (dir != -1) * ((dir - 3) % 2);
+    y = y + (dir != -1) * ((dir - 2) % 2);
+    Standardize(x,map->width);
+    Standardize(y,map->height);
+    if (map->cells[x][y] != CELL_BLOCK) return 1;
+    else return 0;
+}
+
 Direction NearestPath(Map *map, int origin_x, int origin_y, int destin_x, int destin_y){
     int choices[4] = {0,0,0,0};
-    if (origin_x == destin_x && origin_y == destin_y)   return rand()%4 + 1;
+    if (origin_x == destin_x && origin_y == destin_y)   {
+        while (1){
+            int dir = rand() % 4 + 1;
+            if (valid_direction(origin_x,origin_y,dir,map)){
+                //printf("\n%d %d\n",origin_x,origin_y);
+                //sleep(5);
+                return dir;
+            }
+        }
+    }
     else {
         int i;
         int front = 0;
@@ -29,7 +47,7 @@ Direction NearestPath(Map *map, int origin_x, int origin_y, int destin_x, int de
             else if (map->cells[queue[front][0]][queue[front][1]] != CELL_BLOCK) {
                 //printf("\n%d %d\n",queue[front][0],queue[front][1]);
                 //sleep(1);
-                for ( i = 1, distance++; i <= 4; ++i,rear++) {
+                for ( i = 1, ++distance; i <= 4; ++i, rear = (rear + 1) % 10000) {
                     queue[rear][0] = queue[front][0] - ((i - 3) % 2);
                     queue[rear][1] = queue[front][1] + ((i - 2) % 2);
                     queue[rear][2] = queue[front][2];
@@ -38,7 +56,7 @@ Direction NearestPath(Map *map, int origin_x, int origin_y, int destin_x, int de
                     Standardize(queue[rear][1],map->height);
                 }
             }
-            front++;
+            front = (front + 1) % 10000;
         }
     }
 }
@@ -59,41 +77,28 @@ Direction decideGhost(const Map* map, Ghost *ghost, Pacman *pacman, Ghost *blink
     }*/
     //printf("\n%d\n",NearestPath(map,ghost->x,ghost->y,pacman->x,pacman->y));
     //sleep(1);
-    return NearestPath(map,ghost->x,ghost->y,pacman->x,pacman->y);
+    return NearestPath(map,(int)ghost->x,(int)ghost->y,(int)round(pacman->x),(int)round(pacman->y));
 }
 
 Direction decidePacman(const Map* map, Pacman* pacman, Action action) {
-    int dir = pacman->dir;
-    int destin_y = pacman->y, destin_x =pacman->x;
+    int dir;
     if (action & MOVE_ACTION_MASK) {
         switch (action) {
             case ACTION_UP:
-                destin_y = (int) pacman->y - 1;
                 dir = 1;
                 break;
             case ACTION_RIGHT:
-                destin_x = (int) pacman->x + 1;
                 dir = 2;
                 break;
             case ACTION_DOWN:
-                destin_y = (int) pacman->y + 1;
                 dir = 3;
                 break;
             case ACTION_LEFT:
-                destin_x = (int) pacman->x - 1;
                 dir = 4;
                 break;
         }
-        Standardize(destin_x,map->width);
-        Standardize(destin_y,map->height);
-        if (map->cells[destin_x][destin_y] != CELL_BLOCK) {
-            return dir;
-        }
+        if (valid_direction((int)pacman->x,(int)pacman->y,dir,map)) return dir;
     }
-    destin_x = (int)pacman->x - (pacman->dir != -1) * ((pacman->dir - 3) % 2);
-    destin_y = (int)pacman->y + (pacman->dir != -1) * ((pacman->dir - 2) % 2);
-    Standardize(destin_x,map->width);
-    Standardize(destin_y,map->height);
-    if (map->cells[destin_x][destin_y] != CELL_BLOCK) return pacman->dir;
+    if ( valid_direction((int)pacman->x, (int)pacman->y, pacman->dir, map)) return pacman->dir;
     else return -1;
 }
