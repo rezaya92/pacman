@@ -17,6 +17,6 @@ typedef struct {
     Cell cells[MAP_MAX_SIZE][MAP_MAX_SIZE];
 } Map;
 
-#define Standardize(x,max_x) ((x) < 0 ? (x) % (max_x) + (max_x) : (x) % (max_x))
+#define Standardize(x,max_x) ((x) < 0 ? (x) % (max_x) + (((x) % (max_x)) != 0) * (max_x) : (x) % (max_x))
 
 #endif

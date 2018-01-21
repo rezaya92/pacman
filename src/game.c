@@ -83,8 +83,12 @@ void checkEatables(Map* map, Game* outGame, Pacman* outPacman, Ghost* outGhosts)
 }
 
 void checkGhostCollision(Pacman* outPacman, Ghost* outGhost) {
-    double distance = sqrt ( pow (outGhost->y - outPacman->y , 2 ) + pow ( outGhost->x - outPacman->x , 2 ) );
-    if ( distance < 0.7){
+    //double distance = sqrt ( pow (outGhost->y - outPacman->y , 2 ) + pow ( outGhost->x - outPacman->x , 2 ) );
+    double x_distance = fabs(outGhost->x - outPacman->x);
+    double y_distance = fabs(outGhost->y - outPacman->y);
+    if ( sqrt( pow( x_distance, 2) + pow( y_distance, 2)) < 0.7){
+        //printf("\n%lf\n",distance);
+        //sleep(2);
         if (outGhost->blue == 1){
             outGhost->blue = 0;
             outGhost->blueCounterDown = 0;
