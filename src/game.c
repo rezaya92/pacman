@@ -56,8 +56,8 @@ void checkEatables(Map* map, Game* outGame, Pacman* outPacman, Ghost* outGhosts)
     destin_y = (int)outPacman->y + (outPacman->dir == 3);
     distance = fabs(destin_x + destin_y - outPacman->x - outPacman->y);
     if (distance < 0.624){
-        Standardize(destin_x,map->width);
-        Standardize(destin_y,map->height);
+        destin_x = Standardize(destin_x,map->width);
+        destin_y = Standardize(destin_y,map->height);
         switch (map->cells[destin_x][destin_y]){
             case CELL_CHEESE:
                 outGame->score += CHEESE_SCORE;
@@ -84,7 +84,7 @@ void checkEatables(Map* map, Game* outGame, Pacman* outPacman, Ghost* outGhosts)
 
 void checkGhostCollision(Pacman* outPacman, Ghost* outGhost) {
     double distance = sqrt ( pow (outGhost->y - outPacman->y , 2 ) + pow ( outGhost->x - outPacman->x , 2 ) );
-    if ( distance < 0.5){
+    if ( distance < 0.7){
         if (outGhost->blue == 1){
             outGhost->blue = 0;
             outGhost->blueCounterDown = 0;

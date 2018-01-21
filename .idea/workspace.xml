@@ -12,9 +12,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c67b05fc-4f89-4905-848f-a80659e48ce5" name="Default" comment="Phase0">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PACMAN.dir/src/physics.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/PACMAN" afterPath="$PROJECT_DIR$/cmake-build-debug/PACMAN" />
+      <change beforePath="$PROJECT_DIR$/src/game.c" afterPath="$PROJECT_DIR$/src/game.c" />
+      <change beforePath="$PROJECT_DIR$/src/map.h" afterPath="$PROJECT_DIR$/src/map.h" />
       <change beforePath="$PROJECT_DIR$/src/physics.c" afterPath="$PROJECT_DIR$/src/physics.c" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -53,8 +53,8 @@
       <file leaf-file-name="game.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/game.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="557">
-              <caret line="40" column="23" lean-forward="true" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
+            <state relative-caret-position="306">
+              <caret line="18" column="30" lean-forward="true" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -65,8 +65,8 @@
       <file leaf-file-name="physics.c" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/physics.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="58" column="39" lean-forward="false" selection-start-line="58" selection-start-column="39" selection-end-line="58" selection-end-column="39" />
+            <state relative-caret-position="362">
+              <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -90,6 +90,9 @@
       <find>pr</find>
       <find>pri</find>
       <find>heigh</find>
+      <find>sta</find>
+      <find>Stand</find>
+      <find>stand</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -198,12 +201,12 @@
       <workItem from="1515404164884" duration="23715000" />
       <workItem from="1515674605710" duration="1259000" />
       <workItem from="1515861574510" duration="1825000" />
-      <workItem from="1516462028241" duration="5328000" />
+      <workItem from="1516462028241" duration="25087000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="144715000" />
+    <option name="totallyTimeSpent" value="164474000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="461" y="102" width="1920" height="1053" extended-state="6" />
@@ -734,8 +737,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/game.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="557">
-          <caret line="40" column="23" lean-forward="true" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
+        <state relative-caret-position="306">
+          <caret line="18" column="30" lean-forward="true" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
@@ -744,8 +747,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/physics.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="58" column="39" lean-forward="false" selection-start-line="58" selection-start-column="39" selection-end-line="58" selection-end-column="39" />
+        <state relative-caret-position="362">
+          <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
