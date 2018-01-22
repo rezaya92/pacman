@@ -98,7 +98,7 @@ Direction NearestPath(const Map *map, int origin_x, int origin_y, int destin_x, 
 Direction decideGhost(const Map* map, Ghost *ghost, Pacman *pacman, Ghost *blinky) {
     int i, j, pacman_x_fix, pacman_y_fix, flag, destin_x, destin_y, check_x, check_y, symmetry_x, symmetry_y, blinky_x_fix, blinky_y_fix, nearestblock[2];
     double distance;
-    if (ghost->blue == 1) return NearestPath(map,(int)ghost->x,(int)ghost->y, ghost->startX, ghost->startY );
+    if (ghost->blue == 1 || ghost->state == 2) return NearestPath(map,(int)ghost->x,(int)ghost->y, ghost->startX, ghost->startY );
     else {
         pacman_x_fix = Standardize((int)round(pacman->x),map->width);
         pacman_y_fix = Standardize((int)round(pacman->y),map->height);
@@ -119,8 +119,7 @@ Direction decideGhost(const Map* map, Ghost *ghost, Pacman *pacman, Ghost *blink
             }
         }
         if (ghost->type == 2) {
-            distance = sqrt ( pow (ghost->y - pacman->y , 2 ) + pow ( ghost->x - pacman->x , 2 ) );
-            //TODO minimum not calculated
+            distance = fabs(ghost->y - pacman->y) + fabs ( ghost->x - pacman->x );
             NearestEmptyBlock(map,0,map->height - 1, nearestblock);
             if (distance > 8) return NearestPath(map,(int)ghost->x,(int)ghost->y, pacman_x_fix, pacman_y_fix);
             else return NearestPath(map,(int)ghost->x,(int)ghost->y, nearestblock[0], nearestblock[1]);
@@ -134,7 +133,6 @@ Direction decideGhost(const Map* map, Ghost *ghost, Pacman *pacman, Ghost *blink
             return NearestPath( map, (int)ghost->x, (int)ghost->y, nearestblock[0], nearestblock[1]);
         }
     }
-    //return -1;
 }
 
 Direction decidePacman(const Map* map, Pacman* pacman, Action action) {
