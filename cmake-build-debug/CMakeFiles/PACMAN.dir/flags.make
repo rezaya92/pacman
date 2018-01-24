@@ -6,5 +6,5 @@ C_FLAGS = -g   -std=gnu99
 
 C_DEFINES = -D_REENTRANT
 
-C_INCLUDES = -I/home/reza/CLionProjects/PACMAN/src 
+C_INCLUDES = -I/home/reza/CLionProjects/PACMAN/src -I/usr/include/SDL2 
 

@@ -57,9 +57,33 @@ include CMakeFiles/PACMAN.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/PACMAN.dir/flags.make
 
+CMakeFiles/PACMAN.dir/src/graphics.c.o: CMakeFiles/PACMAN.dir/flags.make
+CMakeFiles/PACMAN.dir/src/graphics.c.o: ../src/graphics.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/reza/CLionProjects/PACMAN/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/PACMAN.dir/src/graphics.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/PACMAN.dir/src/graphics.c.o   -c /home/reza/CLionProjects/PACMAN/src/graphics.c
+
+CMakeFiles/PACMAN.dir/src/graphics.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/PACMAN.dir/src/graphics.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/reza/CLionProjects/PACMAN/src/graphics.c > CMakeFiles/PACMAN.dir/src/graphics.c.i
+
+CMakeFiles/PACMAN.dir/src/graphics.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/PACMAN.dir/src/graphics.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/reza/CLionProjects/PACMAN/src/graphics.c -o CMakeFiles/PACMAN.dir/src/graphics.c.s
+
+CMakeFiles/PACMAN.dir/src/graphics.c.o.requires:
+
+.PHONY : CMakeFiles/PACMAN.dir/src/graphics.c.o.requires
+
+CMakeFiles/PACMAN.dir/src/graphics.c.o.provides: CMakeFiles/PACMAN.dir/src/graphics.c.o.requires
+	$(MAKE) -f CMakeFiles/PACMAN.dir/build.make CMakeFiles/PACMAN.dir/src/graphics.c.o.provides.build
+.PHONY : CMakeFiles/PACMAN.dir/src/graphics.c.o.provides
+
+CMakeFiles/PACMAN.dir/src/graphics.c.o.provides.build: CMakeFiles/PACMAN.dir/src/graphics.c.o
+
+
 CMakeFiles/PACMAN.dir/src/physics.c.o: CMakeFiles/PACMAN.dir/flags.make
 CMakeFiles/PACMAN.dir/src/physics.c.o: ../src/physics.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/reza/CLionProjects/PACMAN/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/PACMAN.dir/src/physics.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/reza/CLionProjects/PACMAN/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/PACMAN.dir/src/physics.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/PACMAN.dir/src/physics.c.o   -c /home/reza/CLionProjects/PACMAN/src/physics.c
 
 CMakeFiles/PACMAN.dir/src/physics.c.i: cmake_force
@@ -83,7 +107,7 @@ CMakeFiles/PACMAN.dir/src/physics.c.o.provides.build: CMakeFiles/PACMAN.dir/src/
 
 CMakeFiles/PACMAN.dir/src/game.c.o: CMakeFiles/PACMAN.dir/flags.make
 CMakeFiles/PACMAN.dir/src/game.c.o: ../src/game.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/reza/CLionProjects/PACMAN/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/PACMAN.dir/src/game.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/reza/CLionProjects/PACMAN/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/PACMAN.dir/src/game.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/PACMAN.dir/src/game.c.o   -c /home/reza/CLionProjects/PACMAN/src/game.c
 
 CMakeFiles/PACMAN.dir/src/game.c.i: cmake_force
@@ -105,20 +129,47 @@ CMakeFiles/PACMAN.dir/src/game.c.o.provides: CMakeFiles/PACMAN.dir/src/game.c.o.
 CMakeFiles/PACMAN.dir/src/game.c.o.provides.build: CMakeFiles/PACMAN.dir/src/game.c.o
 
 
+CMakeFiles/PACMAN.dir/main.c.o: CMakeFiles/PACMAN.dir/flags.make
+CMakeFiles/PACMAN.dir/main.c.o: ../main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/reza/CLionProjects/PACMAN/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/PACMAN.dir/main.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/PACMAN.dir/main.c.o   -c /home/reza/CLionProjects/PACMAN/main.c
+
+CMakeFiles/PACMAN.dir/main.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/PACMAN.dir/main.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/reza/CLionProjects/PACMAN/main.c > CMakeFiles/PACMAN.dir/main.c.i
+
+CMakeFiles/PACMAN.dir/main.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/PACMAN.dir/main.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/reza/CLionProjects/PACMAN/main.c -o CMakeFiles/PACMAN.dir/main.c.s
+
+CMakeFiles/PACMAN.dir/main.c.o.requires:
+
+.PHONY : CMakeFiles/PACMAN.dir/main.c.o.requires
+
+CMakeFiles/PACMAN.dir/main.c.o.provides: CMakeFiles/PACMAN.dir/main.c.o.requires
+	$(MAKE) -f CMakeFiles/PACMAN.dir/build.make CMakeFiles/PACMAN.dir/main.c.o.provides.build
+.PHONY : CMakeFiles/PACMAN.dir/main.c.o.provides
+
+CMakeFiles/PACMAN.dir/main.c.o.provides.build: CMakeFiles/PACMAN.dir/main.c.o
+
+
 # Object files for target PACMAN
 PACMAN_OBJECTS = \
+"CMakeFiles/PACMAN.dir/src/graphics.c.o" \
 "CMakeFiles/PACMAN.dir/src/physics.c.o" \
-"CMakeFiles/PACMAN.dir/src/game.c.o"
+"CMakeFiles/PACMAN.dir/src/game.c.o" \
+"CMakeFiles/PACMAN.dir/main.c.o"
 
 # External object files for target PACMAN
 PACMAN_EXTERNAL_OBJECTS =
 
+PACMAN: CMakeFiles/PACMAN.dir/src/graphics.c.o
 PACMAN: CMakeFiles/PACMAN.dir/src/physics.c.o
 PACMAN: CMakeFiles/PACMAN.dir/src/game.c.o
+PACMAN: CMakeFiles/PACMAN.dir/main.c.o
 PACMAN: CMakeFiles/PACMAN.dir/build.make
-PACMAN: ../liblib.a
 PACMAN: CMakeFiles/PACMAN.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/reza/CLionProjects/PACMAN/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable PACMAN"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/reza/CLionProjects/PACMAN/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C executable PACMAN"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/PACMAN.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -126,8 +177,10 @@ CMakeFiles/PACMAN.dir/build: PACMAN
 
 .PHONY : CMakeFiles/PACMAN.dir/build
 
+CMakeFiles/PACMAN.dir/requires: CMakeFiles/PACMAN.dir/src/graphics.c.o.requires
 CMakeFiles/PACMAN.dir/requires: CMakeFiles/PACMAN.dir/src/physics.c.o.requires
 CMakeFiles/PACMAN.dir/requires: CMakeFiles/PACMAN.dir/src/game.c.o.requires
+CMakeFiles/PACMAN.dir/requires: CMakeFiles/PACMAN.dir/main.c.o.requires
 
 .PHONY : CMakeFiles/PACMAN.dir/requires
 

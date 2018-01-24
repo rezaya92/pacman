@@ -46,6 +46,7 @@
 				<Compiler>
 					<Add option="-D_REENTRANT"/>
 					<Add directory="/home/reza/CLionProjects/PACMAN/src"/>
+					<Add directory="/usr/include/SDL2"/>
 					<Add directory="/usr/include/c++/5"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
 					<Add directory="/usr/include/c++/5/backward"/>
@@ -71,6 +72,7 @@
 				<Compiler>
 					<Add option="-D_REENTRANT"/>
 					<Add directory="/home/reza/CLionProjects/PACMAN/src"/>
+					<Add directory="/usr/include/SDL2"/>
 					<Add directory="/usr/include/c++/5"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
 					<Add directory="/usr/include/c++/5/backward"/>
@@ -88,10 +90,19 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/reza/CLionProjects/PACMAN/main.c">
+			<Option target="PACMAN"/>
+		</Unit>
 		<Unit filename="/home/reza/CLionProjects/PACMAN/src/game.c">
 			<Option target="PACMAN"/>
 		</Unit>
 		<Unit filename="/home/reza/CLionProjects/PACMAN/src/game.h">
+			<Option target="PACMAN"/>
+		</Unit>
+		<Unit filename="/home/reza/CLionProjects/PACMAN/src/graphics.c">
+			<Option target="PACMAN"/>
+		</Unit>
+		<Unit filename="/home/reza/CLionProjects/PACMAN/src/graphics.h">
 			<Option target="PACMAN"/>
 		</Unit>
 		<Unit filename="/home/reza/CLionProjects/PACMAN/src/physics.c">

@@ -123,6 +123,33 @@ PACMAN/fast:
 	$(MAKE) -f CMakeFiles/PACMAN.dir/build.make CMakeFiles/PACMAN.dir/build
 .PHONY : PACMAN/fast
 
+main.o: main.c.o
+
+.PHONY : main.o
+
+# target to build an object file
+main.c.o:
+	$(MAKE) -f CMakeFiles/PACMAN.dir/build.make CMakeFiles/PACMAN.dir/main.c.o
+.PHONY : main.c.o
+
+main.i: main.c.i
+
+.PHONY : main.i
+
+# target to preprocess a source file
+main.c.i:
+	$(MAKE) -f CMakeFiles/PACMAN.dir/build.make CMakeFiles/PACMAN.dir/main.c.i
+.PHONY : main.c.i
+
+main.s: main.c.s
+
+.PHONY : main.s
+
+# target to generate assembly for a file
+main.c.s:
+	$(MAKE) -f CMakeFiles/PACMAN.dir/build.make CMakeFiles/PACMAN.dir/main.c.s
+.PHONY : main.c.s
+
 src/game.o: src/game.c.o
 
 .PHONY : src/game.o
@@ -149,6 +176,33 @@ src/game.s: src/game.c.s
 src/game.c.s:
 	$(MAKE) -f CMakeFiles/PACMAN.dir/build.make CMakeFiles/PACMAN.dir/src/game.c.s
 .PHONY : src/game.c.s
+
+src/graphics.o: src/graphics.c.o
+
+.PHONY : src/graphics.o
+
+# target to build an object file
+src/graphics.c.o:
+	$(MAKE) -f CMakeFiles/PACMAN.dir/build.make CMakeFiles/PACMAN.dir/src/graphics.c.o
+.PHONY : src/graphics.c.o
+
+src/graphics.i: src/graphics.c.i
+
+.PHONY : src/graphics.i
+
+# target to preprocess a source file
+src/graphics.c.i:
+	$(MAKE) -f CMakeFiles/PACMAN.dir/build.make CMakeFiles/PACMAN.dir/src/graphics.c.i
+.PHONY : src/graphics.c.i
+
+src/graphics.s: src/graphics.c.s
+
+.PHONY : src/graphics.s
+
+# target to generate assembly for a file
+src/graphics.c.s:
+	$(MAKE) -f CMakeFiles/PACMAN.dir/build.make CMakeFiles/PACMAN.dir/src/graphics.c.s
+.PHONY : src/graphics.c.s
 
 src/physics.o: src/physics.c.o
 
@@ -186,9 +240,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... PACMAN"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 	@echo "... src/game.o"
 	@echo "... src/game.i"
 	@echo "... src/game.s"
+	@echo "... src/graphics.o"
+	@echo "... src/graphics.i"
+	@echo "... src/graphics.s"
 	@echo "... src/physics.o"
 	@echo "... src/physics.i"
 	@echo "... src/physics.s"

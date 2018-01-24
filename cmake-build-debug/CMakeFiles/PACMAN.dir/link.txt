@@ -1,1 +1,1 @@
-/usr/bin/cc -g   CMakeFiles/PACMAN.dir/src/physics.c.o CMakeFiles/PACMAN.dir/src/game.c.o  -o PACMAN ../liblib.a -lm -lSDL2 -lSDL2_gfx 
+/usr/bin/cc -g   CMakeFiles/PACMAN.dir/src/graphics.c.o CMakeFiles/PACMAN.dir/src/physics.c.o CMakeFiles/PACMAN.dir/src/game.c.o CMakeFiles/PACMAN.dir/main.c.o  -o PACMAN -lm -lSDL2 -lSDL2_gfx 
