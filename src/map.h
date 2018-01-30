@@ -10,6 +10,7 @@ typedef enum {
 } Cell;
 
 #define MAP_MAX_SIZE 100
+#define SCALE 30
 
 typedef struct {
     int width;

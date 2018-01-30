@@ -7,8 +7,10 @@
 
 void InitiateGraphics(Pacman pacman,Game game, double time, SDL_Renderer *renderer);
 void DrawMap(Map *map, SDL_Renderer * renderer);
-void DrawBots(Ghost *ghost, Pacman *pacman, SDL_Renderer *renderer);
-
+void DrawBots(Ghost *ghost, Pacman *pacman, SDL_Renderer *renderer, Map *map);
+void DrawExtras(SDL_Renderer * renderer, Map *map,Game *game, Pacman *pacman, int time);
+void pause(SDL_Renderer *renderer, int *quit, Map * map);
+void menu(int type,Game *game);
 
 
 

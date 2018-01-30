@@ -6,6 +6,26 @@
 
 #IncludeRegexTransform: 
 
+../main.h
+stdio.h
+-
+game.h
+-
+map.h
+-
+time.h
+-
+SDL2_gfxPrimitives.h
+../SDL2_gfxPrimitives.h
+map.h
+../map.h
+physics.h
+../physics.h
+game.h
+../game.h
+graphics.h
+../graphics.h
+
 ../src/game.h
 stdbool.h
 -
@@ -34,6 +54,10 @@ input.h
 stdio.h
 -
 game.h
+-
+map.h
+-
+time.h
 -
 SDL2_gfxPrimitives.h
 /home/reza/CLionProjects/PACMAN/SDL2_gfxPrimitives.h
@@ -69,12 +93,16 @@ map.h
 /home/reza/CLionProjects/PACMAN/src/map.h
 
 /home/reza/CLionProjects/PACMAN/src/graphics.c
+time.h
+-
 game.h
 /home/reza/CLionProjects/PACMAN/src/game.h
 map.h
 /home/reza/CLionProjects/PACMAN/src/map.h
 SDL2_gfxPrimitives.h
 /home/reza/CLionProjects/PACMAN/src/SDL2_gfxPrimitives.h
+../main.h
+-
 
 /home/reza/CLionProjects/PACMAN/src/input.h
 

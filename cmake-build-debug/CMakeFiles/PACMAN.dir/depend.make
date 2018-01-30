@@ -58,6 +58,10 @@ CMakeFiles/PACMAN.dir/src/game.c.o: ../src/input.h
 CMakeFiles/PACMAN.dir/src/game.c.o: ../src/map.h
 CMakeFiles/PACMAN.dir/src/game.c.o: ../src/physics.h
 
+CMakeFiles/PACMAN.dir/src/graphics.c.o: ../main.h
+CMakeFiles/PACMAN.dir/src/graphics.c.o: ../src/graphics.h
+CMakeFiles/PACMAN.dir/src/graphics.c.o: ../src/input.h
+CMakeFiles/PACMAN.dir/src/graphics.c.o: ../src/physics.h
 CMakeFiles/PACMAN.dir/src/graphics.c.o: ../src/game.h
 CMakeFiles/PACMAN.dir/src/graphics.c.o: ../src/graphics.c
 CMakeFiles/PACMAN.dir/src/graphics.c.o: ../src/map.h

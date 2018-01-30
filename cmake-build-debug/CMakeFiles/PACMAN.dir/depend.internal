@@ -59,6 +59,10 @@ CMakeFiles/PACMAN.dir/src/game.c.o
  /home/reza/CLionProjects/PACMAN/src/map.h
  /home/reza/CLionProjects/PACMAN/src/physics.h
 CMakeFiles/PACMAN.dir/src/graphics.c.o
+ ../main.h
+ ../src/graphics.h
+ ../src/input.h
+ ../src/physics.h
  /home/reza/CLionProjects/PACMAN/src/game.h
  /home/reza/CLionProjects/PACMAN/src/graphics.c
  /home/reza/CLionProjects/PACMAN/src/map.h
