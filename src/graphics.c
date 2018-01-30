@@ -139,13 +139,38 @@ void pause(SDL_Renderer *renderer, int *quit, Map * map){
     SDL_RenderSetScale(renderer,1,1);
 }
 
-void menu(int type, Game * game){
-    //SDL_INIT_VIDEO;
-    //SDL_Window *window = SDL_CreateWindow("Pacman", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 400, 600, SDL_WINDOW_OPENGL);
-    //SDL_Renderer *renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
-    //SDL_Delay(1000);
-    //SDL_DestroyWindow(window);
-    //SDL_DestroyRenderer(renderer);
-    //SDL_Delay(2000);
-    main(0,"pacman");
+int menu(SDL_Renderer *renderer, Map *map, Pacman *pacman, Game *game){
+    SDL_Event e;
+    SDL_RenderSetScale(renderer, 4, 4);
+    while (1) {
+        if (SDL_PollEvent(&e)) {
+            if (e.type == SDL_QUIT) return 1;
+            else if (e.type == SDL_MOUSEBUTTONDOWN) {
+                if (e.button.x > map->width * SCALE/2 - 100 && e.button.x < map->width * SCALE/2 + 120 && e.button.y > 160 && e.button.y < 240)    return 0;
+                else if (e.button.x > map->width * SCALE/2 - 100 && e.button.x < map->width * SCALE/2 + 120 && e.button.y > 320 && e.button.y < 400) return 1;
+            } else continue;
+        }
+        SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0xFF);
+        SDL_RenderClear(renderer);
+        static double tt =0;
+        tt +=0.77;
+        filledPieColor(renderer, map->width * SCALE/8 - 50, 50, SCALE/2, 45 * fabs(sin(tt)), - 45 * fabs(sin(tt)),0XFF00FFFF);
+        if (game->cheeses == 0 && game->pineapples == 0) stringColor(renderer, map->width *SCALE/8 - 20, 10, "WON", 0XFF00FFFF);
+        else if (pacman->health == 0) stringColor(renderer, map->width *SCALE/8 - 10, 10, "LOST", 0XFF0000FF);
+        else stringColor(renderer, map->width *SCALE/8 - 20, 10, "PACMAN", 0XFF00FFFF);
+        if (isGameFinished(game,pacman)) {
+            char scores[30];
+            sprintf(scores,"SCORE:%d",game->score);
+            stringColor(renderer, map->width *SCALE/8 - 25, 22, scores, 0XFF00FFFF);
+        }
+        boxColor(renderer,map->width *SCALE/8 - 25,40,map->width * SCALE/8 + 30, 60,0XFF00FF00);
+        rectangleColor(renderer,map->width *SCALE/8 - 25,40,map->width * SCALE/8 + 31, 61,0XFFFFFFFF);
+        stringColor(renderer,map->width * SCALE/8 - 12, 45, "PLAY", 0XFFFFFFFF);
+        boxColor(renderer,map->width *SCALE/8 - 25,80,map->width * SCALE/8 + 30, 100,0XFF0000FF);
+        rectangleColor(renderer,map->width *SCALE/8 - 25,80,map->width * SCALE/8 + 31, 101,0XFFFFFFFF);
+        stringColor(renderer,map->width * SCALE/8 - 12, 85, "QUIT", 0XFFFFFFFF);
+        stringColor(renderer, map->width *SCALE/8 - 80, 140, "DEVELOPED BY: REZA.YB", 0XFF00FFFF);
+        SDL_RenderPresent(renderer);
+        SDL_Delay(100);
+    }
 }

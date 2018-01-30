@@ -9,7 +9,6 @@
 #include "graphics.h"
 
 int main(int argc, char* argv[]) {
-    //if (argc == 1) menu(1,NULL);
     int start =time(NULL) , now;
     Map map;
     Game game;
@@ -41,10 +40,16 @@ int main(int argc, char* argv[]) {
 
     Action action = ACTION_IDLE;
     SDL_Event e;
-    int quit = 0, i;
+    int quit = menu(renderer,&map,&pacman,&game), i;
     while (!quit)
     {
-        if (isGameFinished(&game,&pacman)) quit = 1;
+        if (isGameFinished(&game,&pacman)) {
+            quit = menu(renderer,&map,&pacman,&game);
+            game.cherries= 0;
+            game.cheeses = 0;
+            game.pineapples = 0;
+            initiateGame("res/reality.txt", &map, &game, &pacman, ghost);
+        }
         now = time(NULL) - start;
         if (SDL_PollEvent(&e)) {
             if (e.type == SDL_QUIT)
