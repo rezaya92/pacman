@@ -48,6 +48,7 @@ int main(int argc, char* argv[]) {
             game.cherries= 0;
             game.cheeses = 0;
             game.pineapples = 0;
+            start = time(NULL);
             initiateGame("res/reality.txt", &map, &game, &pacman, ghost);
         }
         now = time(NULL) - start;
