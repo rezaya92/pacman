@@ -2,7 +2,6 @@
 #include "game.h"
 #include "map.h"
 #include "SDL2_gfxPrimitives.h"
-#include <../main.h>
 
 void InitiateGraphics(Pacman pacman,Game game, double time, SDL_Renderer *renderer){
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0xFF);
